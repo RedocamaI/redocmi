@@ -1,0 +1,13 @@
+<div class="container">
+    <h1>My Experiments</h1>
+    <p class="muted">Small projects and ideas, newest first.</p>
+    <hr />
+    <ul class="experiment-list">
+        @for (experiment of experiments; track experiment.id) {
+        <li>
+            <span class="muted">{{ experiment.date }}</span>
+            <a [routerLink]="getExperimentDetailsUrl(experiment)">{{ experiment.title }}</a>
+        </li>
+        }
+    </ul>
+</div>

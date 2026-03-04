@@ -1,0 +1,31 @@
+.unlock-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 20rem;
+  margin-top: 1rem;
+}
+
+.unlock-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.unlock-form input[type='password'] {
+  padding: 0.4rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-color, #ccc);
+  font: inherit;
+}
+
+.unlock-form button {
+  align-self: flex-start;
+}
+
+.unlock-form .error {
+  color: #c0392b;
+  font-size: 0.85rem;
+}
+

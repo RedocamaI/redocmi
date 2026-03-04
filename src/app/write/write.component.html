@@ -1,0 +1,15 @@
+<div class="container write-layout">
+  <section class="editor">
+    <h1>Write</h1>
+    <textarea
+      [value]="content()"
+      (input)="onContentInput($event)"
+      spellcheck="false"
+    ></textarea>
+  </section>
+  <section class="preview">
+    <h2>Preview</h2>
+    <div [innerHTML]="content() | markdown | async"></div>
+  </section>
+</div>
+

@@ -1,0 +1,15 @@
+<div class="container">
+    @if (experiment()) {
+    <a [routerLink]="experimentsLink" class="back muted">← Experiments</a>
+    <article class="post">
+        <span class="muted">{{ experimentDate() }}</span>
+        <h1>{{ experimentTitle() }}</h1>
+        @if (experimentDescription()) {
+        <p class="description muted">{{ experimentDescription() }}</p>
+        }
+    </article>
+    } @else {
+    <p>Experiment not found.</p>
+    <a [routerLink]="experimentsLink">Back to Experiments</a>
+    }
+</div>

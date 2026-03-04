@@ -1,0 +1,44 @@
+<div class="container">
+  <section class="hero">
+    <h1>Hello, I am Suraj aka Redocmi.</h1>
+    <p class="tagline">A Software Engineer.</p>
+  </section>
+
+  <hr />
+
+  <section class="about">
+    <h2>About</h2>
+    <p class="muted">Short intro or timeline can go here. Aligned with Redocmi.</p>
+  </section>
+
+  <hr />
+
+  <section class="recent-thoughts">
+    <h2>Latest Thoughts</h2>
+    <ul class="thought-list">
+      @for (thought of recentThoughts(); track thought.id) {
+        <li>
+          <span class="muted">{{ thought.date }}</span>
+          <a [routerLink]="getThoughtDetails(thought)">{{ thought.title }}</a>
+        </li>
+      }
+    </ul>
+    <a routerLink="/thoughts" class="more">More →</a>
+  </section>
+
+  <hr />
+
+  <section class="recent-experiments">
+    <h2>Latest Experiments</h2>
+    <ul class="experiment-list">
+      @for (experiment of experiments(); track experiment.id) {
+        <li>
+          <span class="muted">{{ experiment.date }}</span>
+          <a [routerLink]="getThoughtDetails(experiment)">{{ experiment.title }}</a>
+        </li>
+      }
+    </ul>
+    <a routerLink="/experiments" class="more">More →</a>
+  </section>
+</div>
+

@@ -1,0 +1,18 @@
+<div class="container">
+    @if (thought()) {
+    <a [routerLink]="thoughtsLink" class="back muted">← Thoughts</a>
+    <article class="post">
+        <span class="muted">{{ thoughtDate() }}</span>
+        <h1>{{ thoughtTitle() }}</h1>
+        @if (thoughtExcerpt()) {
+        <p class="excerpt muted">{{ thoughtExcerpt() }}</p>
+        }
+        @if (thoughtBody()) {
+        <div class="body">{{ thoughtBody() }}</div>
+        }
+    </article>
+    } @else {
+    <p>Post not found.</p>
+    <a [routerLink]="thoughtsLink">Back to Thoughts</a>
+    }
+</div>

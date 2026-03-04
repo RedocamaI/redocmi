@@ -1,0 +1,35 @@
+.write-layout {
+  display: grid;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.editor textarea {
+  width: 100%;
+  min-height: 16rem;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-color, #ccc);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
+  font-size: 0.9rem;
+  resize: vertical;
+}
+
+.preview pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-color, #ccc);
+  background: rgba(0, 0, 0, 0.02);
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .write-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+

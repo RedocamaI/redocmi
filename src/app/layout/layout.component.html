@@ -1,0 +1,35 @@
+<header class="site-header">
+  <div class="container">
+    <div class="brand">
+      <a routerLink="/" class="logo">redocmi</a>
+      <button
+        type="button"
+        class="theme-toggle"
+        (click)="theme.toggle()"
+        [attr.aria-label]="themeToggleLabel()"
+        [title]="themeToggleTitle()"
+      >
+        {{ theme.isDark() ? '☀' : '☽' }}
+      </button>
+    </div>
+    <nav class="nav">
+      <a [routerLink]="routes.thoughts" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">Thoughts</a>
+      <a [routerLink]="routes.experiments" routerLinkActive="active">Experiments</a>
+      @if (!editMode.isEnabled()) {
+        <a routerLink="/unlock" routerLinkActive="active">Edit mode</a>
+      } @else {
+        <a routerLink="/write" routerLinkActive="active">Write</a>
+        <button type="button" class="link-button" (click)="editMode.lock()">Lock</button>
+      }
+    </nav>
+  </div>
+</header>
+<main class="main">
+  <ng-content />
+</main>
+<footer class="site-footer">
+  <div class="container muted">
+    © Redocmi {{ year() }}
+  </div>
+</footer>
+

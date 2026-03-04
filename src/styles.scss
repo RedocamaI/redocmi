@@ -1,0 +1,74 @@
+/* Redocmi – global styles */
+:root,
+[data-theme="light"] {
+  --color-bg: #fafafa;
+  --color-text: #1a1a1a;
+  --color-muted: #666;
+  --color-accent: #2563eb;
+  --color-border: #e5e5e5;
+  --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --max-width: 720px;
+  --space: 1.5rem;
+}
+
+[data-theme="dark"] {
+  --color-bg: #111;
+  --color-text: #e5e5e5;
+  --color-muted: #a3a3a3;
+  --color-accent: #60a5fa;
+  --color-border: #333;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+h1 { font-size: 1.75rem; }
+h2 { font-size: 1.25rem; margin-top: 2rem; }
+
+hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: var(--space) 0;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space);
+}
+
+.muted {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}

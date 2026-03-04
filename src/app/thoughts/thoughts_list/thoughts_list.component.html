@@ -1,0 +1,13 @@
+<div class="container">
+    <h1>My Thoughts</h1>
+    <p class="muted">All posts, newest first.</p>
+    <hr />
+    <ul class="thought-list">
+        @for (thought of thoughts; track thought.id) {
+        <li>
+            <span class="muted">{{ thought.date }}</span>
+            <a [routerLink]="getThoughtDetailsUrl(thought)">{{ thought.title }}</a>
+        </li>
+        }
+    </ul>
+</div>

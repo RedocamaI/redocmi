@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Enter edit mode</h1>
+  <p class="muted">This area is only for you.</p>
+  <form (submit)="onSubmit($event)" class="unlock-form">
+    <label>
+      Password
+      <input
+        type="password"
+        autocomplete="off"
+        [value]="password()"
+        (input)="onPasswordInput($event)"
+      />
+    </label>
+    @if (error()) {
+      <p class="error">{{ error() }}</p>
+    }
+    <button type="submit">Unlock</button>
+    <a routerLink="/" class="muted">Cancel</a>
+  </form>
+</div>
+
